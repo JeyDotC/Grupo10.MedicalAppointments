@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grupo10.MedicalAppointments.Gui", "Grupo10.MedicalAppointments.Gui\Grupo10.MedicalAppointments.Gui.csproj", "{C2B06B44-6980-43F9-B8A8-AE77E57922DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grupo10.Mvc", "Grupo10.Mvc\Grupo10.Mvc.csproj", "{EA7307BA-8DCA-4619-9FC9-D8693AAD7E18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2B06B44-6980-43F9-B8A8-AE77E57922DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B06B44-6980-43F9-B8A8-AE77E57922DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B06B44-6980-43F9-B8A8-AE77E57922DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B06B44-6980-43F9-B8A8-AE77E57922DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA7307BA-8DCA-4619-9FC9-D8693AAD7E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7307BA-8DCA-4619-9FC9-D8693AAD7E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7307BA-8DCA-4619-9FC9-D8693AAD7E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7307BA-8DCA-4619-9FC9-D8693AAD7E18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDA3FEAD-969C-402F-87BE-6E5AF9C6F5D3}
+	EndGlobalSection
+EndGlobal
