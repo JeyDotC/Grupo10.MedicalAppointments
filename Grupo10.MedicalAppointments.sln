@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grupo10.MedicalAppointments
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grupo10.Mvc", "Grupo10.Mvc\Grupo10.Mvc.csproj", "{EA7307BA-8DCA-4619-9FC9-D8693AAD7E18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grupo10.MedicalAppointments.Model", "Grupo10.MedicalAppointments.Model\Grupo10.MedicalAppointments.Model.csproj", "{81CE9874-3DDA-4149-B998-31243F5590C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grupo10,MedicalAppointments.MySQL", "Grupo10,MedicalAppointments.MySQL\Grupo10,MedicalAppointments.MySQL.csproj", "{290981F7-3F14-4775-8DB4-21E376BE840C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{EA7307BA-8DCA-4619-9FC9-D8693AAD7E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA7307BA-8DCA-4619-9FC9-D8693AAD7E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA7307BA-8DCA-4619-9FC9-D8693AAD7E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81CE9874-3DDA-4149-B998-31243F5590C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CE9874-3DDA-4149-B998-31243F5590C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CE9874-3DDA-4149-B998-31243F5590C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CE9874-3DDA-4149-B998-31243F5590C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290981F7-3F14-4775-8DB4-21E376BE840C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290981F7-3F14-4775-8DB4-21E376BE840C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290981F7-3F14-4775-8DB4-21E376BE840C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290981F7-3F14-4775-8DB4-21E376BE840C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
