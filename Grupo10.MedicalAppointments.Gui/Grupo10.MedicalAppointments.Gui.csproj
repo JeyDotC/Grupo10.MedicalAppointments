@@ -9,13 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Grupo10,MedicalAppointments.MySQL\Grupo10,MedicalAppointments.MySQL.csproj" />
     <ProjectReference Include="..\Grupo10.MedicalAppointments.Model\Grupo10.MedicalAppointments.Model.csproj" />
     <ProjectReference Include="..\Grupo10.Mvc\Grupo10.Mvc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

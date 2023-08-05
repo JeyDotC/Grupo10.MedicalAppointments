@@ -28,17 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            appointmentsGridView = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)appointmentsGridView).BeginInit();
             SuspendLayout();
+            // 
+            // appointmentsGridView
+            // 
+            appointmentsGridView.AllowUserToAddRows = false;
+            appointmentsGridView.AllowUserToDeleteRows = false;
+            appointmentsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            appointmentsGridView.Dock = DockStyle.Fill;
+            appointmentsGridView.Location = new Point(0, 0);
+            appointmentsGridView.Name = "appointmentsGridView";
+            appointmentsGridView.ReadOnly = true;
+            appointmentsGridView.RowTemplate.Height = 25;
+            appointmentsGridView.Size = new Size(352, 367);
+            appointmentsGridView.TabIndex = 0;
             // 
             // MedicalAppointmentsList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(appointmentsGridView);
             Name = "MedicalAppointmentsList";
             Size = new Size(352, 367);
+            ((System.ComponentModel.ISupportInitialize)appointmentsGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView appointmentsGridView;
     }
 }

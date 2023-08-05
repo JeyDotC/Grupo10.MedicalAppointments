@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo10.Mvc
 {
-    internal interface IRenderData<T>
+    public interface IRenderData<T>
     {
         void RenderData(T data);
     }
