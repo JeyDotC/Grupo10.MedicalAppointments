@@ -23,15 +23,16 @@ namespace Grupo10_MedicalAppointments.MySQL
             {
                 var command = connection.CreateCommand();
                 command.CommandText = @"SELECT 
-id, 
-name, 
-lastname, 
-identification, 
-phone, 
-date, 
-doctor_id 
-FROM 
-medical_appointments";
+    a.id, 
+    a.name, 
+    a.lastname, 
+    a.identification, 
+    a.phone, 
+    a.date,
+    d.id as d_id,
+    d.name as d_name,
+    d.specialty as d_speciality
+FROM medical_appointments a join doctors d on a.doctor_id = d.id";
                 var result = command.ExecuteReader();
 
                 while(result.Read())
@@ -44,6 +45,12 @@ medical_appointments";
                         Identification = result.GetString("identification"),
                         Phone = result.GetString("phone"),
                         Date = result.GetDateTime("date"),
+                        Doctor = new Doctor
+                        {
+                            Id = result.GetInt32("d_id"),
+                            Name = result.GetString("d_name"),
+                            Speciality = result.GetString("d_speciality"),
+                        }
                     };
                 }
             }

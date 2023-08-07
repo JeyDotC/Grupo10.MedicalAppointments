@@ -1,14 +1,5 @@
 ﻿using Grupo10.MedicalAppointments.Model.Entities;
 using Grupo10.Mvc;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Grupo10.MedicalAppointments.Gui.Views
 {
@@ -19,12 +10,102 @@ namespace Grupo10.MedicalAppointments.Gui.Views
         public MedicalAppointmentsList()
         {
             InitializeComponent();
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            appointmentsGridView.AutoGenerateColumns = false;
+            appointmentsGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Nombre",
+                DataPropertyName = "Name",
+                Name = "Name",
+            });
+            appointmentsGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Apellido",
+                DataPropertyName = "LastName",
+                Name = "LastName",
+            });
+            appointmentsGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Identificación",
+                DataPropertyName = "Identification",
+                Name = "Identification",
+            });
+            appointmentsGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Teléfono",
+                DataPropertyName = "Phone",
+                Name = "Phone",
+            });
+            appointmentsGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Fecha",
+                DataPropertyName = "Date",
+                Name = "Date",
+            });
+            appointmentsGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Hora",
+                DataPropertyName = "Date",
+                Name = "Time",
+            });
+            appointmentsGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Doctor",
+                DataPropertyName = "Doctor",
+                Name = "Doctor",
+            });
+            appointmentsGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Especialidad",
+                DataPropertyName = "Doctor",
+                Name = "Speciality",
+            });
             appointmentsGridView.DataSource = _bindingSource;
         }
 
         public void RenderData(IEnumerable<MedicalAppointment> data)
         {
             _bindingSource.DataSource = data;
+        }
+
+        private void appointmentsGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value is not null && e.ColumnIndex == appointmentsGridView.Columns["Date"].Index)
+            {
+                e.Value = ((DateTime)e.Value).ToString("dd MMMM yyyy");
+            }
+            if (e.Value is not null && e.ColumnIndex == appointmentsGridView.Columns["Time"].Index)
+            {
+                e.Value = ((DateTime)e.Value).ToString("hh:mm tt");
+            }
+            if (e.Value is not null && e.ColumnIndex == appointmentsGridView.Columns["Doctor"].Index)
+            {
+                var doctor = e.Value as Doctor;
+                if (doctor != null)
+                {
+                    e.Value = doctor.Name;
+                }
+                else
+                {
+                    e.Value = "N/A";
+                }
+            }
+            if (e.Value is not null && e.ColumnIndex == appointmentsGridView.Columns["Speciality"].Index)
+            {
+                var doctor = e.Value as Doctor;
+                if (doctor != null)
+                {
+                    e.Value = doctor.Speciality;
+                }
+                else
+                {
+                    e.Value = "N/A";
+                }
+            }
         }
     }
 }

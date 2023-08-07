@@ -14,6 +14,6 @@
 
         public DateTime Date { get; set; }
 
-
+        public Doctor Doctor { get; set; } = new Doctor();
     }
 }
