@@ -34,12 +34,16 @@
             medicalAppointmentsEditor = new Views.MedicalAppointmentsEditor();
             medicalAppointmentsList = new Views.MedicalAppointmentsList();
             tabPage2 = new TabPage();
+            splitContainer2 = new SplitContainer();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
+            splitContainer2.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -99,13 +103,23 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(splitContainer2);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(792, 422);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Doctores";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            splitContainer2.Dock = DockStyle.Fill;
+            splitContainer2.Location = new Point(3, 3);
+            splitContainer2.Name = "splitContainer2";
+            splitContainer2.Size = new Size(786, 416);
+            splitContainer2.SplitterDistance = 143;
+            splitContainer2.TabIndex = 0;
             // 
             // MainWindow
             // 
@@ -121,6 +135,9 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
+            splitContainer2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -132,5 +149,6 @@
         private SplitContainer splitContainer1;
         public Views.MedicalAppointmentsList medicalAppointmentsList;
         public Views.MedicalAppointmentsEditor medicalAppointmentsEditor;
+        private SplitContainer splitContainer2;
     }
 }
