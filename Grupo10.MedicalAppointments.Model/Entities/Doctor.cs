@@ -13,5 +13,10 @@ namespace Grupo10.MedicalAppointments.Model.Entities
         public string Name { get; set; } = string.Empty;
 
         public string Speciality { get; set; } = string.Empty;
+
+        public override string? ToString()
+        {
+            return $"({Speciality}) {Name}";
+        }
     }
 }

@@ -17,12 +17,19 @@ namespace Grupo10.MedicalAppointments.Gui
             var connectionString = ConfigurationManager.ConnectionStrings["mainConnection"].ConnectionString;
             var db = new Database(connectionString);
             var medicalAppointmentsRepository = new MedicalAppointmentsRepositoryMySQL(db);
+            var doctorsRepository = new DoctorsRepositoryMySql(db);
 
             new MedicalAppointmentsListController(
                  state: appState,
                  view: mainWindow.medicalAppointmentsList,
                  medicalAppointmentsRepository
              ).Setup();
+
+            new MedicalAppointmentsEditorController(
+                state: appState,
+                view: mainWindow.medicalAppointmentsEditor,
+                doctorsRepository
+            ).Setup();
         }
     }
 }

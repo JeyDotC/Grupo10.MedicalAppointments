@@ -14,5 +14,6 @@ namespace Grupo10.MedicalAppointments.Gui
 
         public StateUnit<IEnumerable<MedicalAppointment>> Appointments { get; } = new StateUnit<IEnumerable<MedicalAppointment>>(Enumerable.Empty<MedicalAppointment>());
 
+        public StateUnit<IEnumerable<Doctor>> Doctors { get; } = new StateUnit<IEnumerable<Doctor>>(Enumerable.Empty<Doctor>());
     }
 }

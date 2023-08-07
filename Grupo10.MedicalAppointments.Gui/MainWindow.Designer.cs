@@ -31,7 +31,7 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             splitContainer1 = new SplitContainer();
-            medicalAppointmentsEditor1 = new Views.MedicalAppointmentsEditor();
+            medicalAppointmentsEditor = new Views.MedicalAppointmentsEditor();
             medicalAppointmentsList = new Views.MedicalAppointmentsList();
             tabPage2 = new TabPage();
             tabControl1.SuspendLayout();
@@ -61,7 +61,7 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(792, 422);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "Citas Médicas";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
@@ -72,7 +72,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(medicalAppointmentsEditor1);
+            splitContainer1.Panel1.Controls.Add(medicalAppointmentsEditor);
             // 
             // splitContainer1.Panel2
             // 
@@ -81,13 +81,13 @@
             splitContainer1.SplitterDistance = 262;
             splitContainer1.TabIndex = 0;
             // 
-            // medicalAppointmentsEditor1
+            // medicalAppointmentsEditor
             // 
-            medicalAppointmentsEditor1.Dock = DockStyle.Fill;
-            medicalAppointmentsEditor1.Location = new Point(0, 0);
-            medicalAppointmentsEditor1.Name = "medicalAppointmentsEditor1";
-            medicalAppointmentsEditor1.Size = new Size(262, 416);
-            medicalAppointmentsEditor1.TabIndex = 0;
+            medicalAppointmentsEditor.Dock = DockStyle.Fill;
+            medicalAppointmentsEditor.Location = new Point(0, 0);
+            medicalAppointmentsEditor.Name = "medicalAppointmentsEditor";
+            medicalAppointmentsEditor.Size = new Size(262, 416);
+            medicalAppointmentsEditor.TabIndex = 0;
             // 
             // medicalAppointmentsList
             // 
@@ -114,7 +114,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tabControl1);
             Name = "MainWindow";
-            Text = "Form1";
+            Text = "Grupo10 - Citas Médicas";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             splitContainer1.Panel1.ResumeLayout(false);
@@ -130,7 +130,7 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private SplitContainer splitContainer1;
-        private Views.MedicalAppointmentsEditor medicalAppointmentsEditor1;
         public Views.MedicalAppointmentsList medicalAppointmentsList;
+        public Views.MedicalAppointmentsEditor medicalAppointmentsEditor;
     }
 }
