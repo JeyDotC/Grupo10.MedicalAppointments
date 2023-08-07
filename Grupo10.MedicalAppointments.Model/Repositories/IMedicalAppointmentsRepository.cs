@@ -11,6 +11,8 @@ namespace Grupo10.MedicalAppointments.Model.Repositories
     {
         void Add(MedicalAppointment medicalAppointment);
 
+        void Update(MedicalAppointment medicalAppointment);
+
         IEnumerable<MedicalAppointment> GetAll();
     }
 }

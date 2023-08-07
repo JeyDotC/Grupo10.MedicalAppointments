@@ -13,6 +13,8 @@ namespace Grupo10.MedicalAppointments.Gui.Views
             Initialize();
         }
 
+        public event EventHandler<MedicalAppointment> EditMedicalAppointment;
+
         private void Initialize()
         {
             appointmentsGridView.AutoGenerateColumns = false;
@@ -64,6 +66,13 @@ namespace Grupo10.MedicalAppointments.Gui.Views
                 DataPropertyName = "Doctor",
                 Name = "Speciality",
             });
+            appointmentsGridView.Columns.Add(new DataGridViewButtonColumn
+            {
+                Name = "Action",
+                Text = "Editar",
+                HeaderText = "",
+                UseColumnTextForButtonValue = true,
+            });
             appointmentsGridView.DataSource = _bindingSource;
         }
 
@@ -106,6 +115,23 @@ namespace Grupo10.MedicalAppointments.Gui.Views
                     e.Value = "N/A";
                 }
             }
+        }
+
+        private void appointmentsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex != appointmentsGridView.Columns["Action"].Index)
+            {
+                return;
+            }
+
+            var appointment = _bindingSource.Current as MedicalAppointment;
+
+            if (appointment == null)
+            {
+                return;
+            }
+
+            EditMedicalAppointment?.Invoke(this, appointment);
         }
     }
 }

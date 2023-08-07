@@ -53,7 +53,8 @@ namespace Grupo10_MedicalAppointments.MySQL
     d.id as d_id,
     d.name as d_name,
     d.specialty as d_speciality
-FROM medical_appointments a join doctors d on a.doctor_id = d.id";
+FROM medical_appointments a join doctors d on a.doctor_id = d.id
+ORDER BY id DESC";
                 var result = command.ExecuteReader();
 
                 while (result.Read())
@@ -74,6 +75,32 @@ FROM medical_appointments a join doctors d on a.doctor_id = d.id";
                         }
                     };
                 }
+            }
+        }
+
+        public void Update(MedicalAppointment medicalAppointment)
+        {
+            using (var connection = _db.Open())
+            {
+                var command = connection.CreateCommand();
+                command.CommandText = @"UPDATE medical_appointments SET
+    name = @name, 
+    lastname = @lastName, 
+    identification = @identification, 
+    phone = @phone, 
+    date = @date, 
+    doctor_id = @doctor_id
+WHERE id = @id";
+
+                command.Parameters.AddWithValue("@id", medicalAppointment.Id);
+                command.Parameters.AddWithValue("@name", medicalAppointment.Name);
+                command.Parameters.AddWithValue("@lastName", medicalAppointment.LastName);
+                command.Parameters.AddWithValue("@identification", medicalAppointment.Identification);
+                command.Parameters.AddWithValue("@phone", medicalAppointment.Phone);
+                command.Parameters.AddWithValue("@date", medicalAppointment.Date);
+                command.Parameters.AddWithValue("@doctor_id", medicalAppointment.Doctor.Id);
+
+                command.ExecuteNonQuery();
             }
         }
     }

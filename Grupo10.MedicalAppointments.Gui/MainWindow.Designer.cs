@@ -78,7 +78,7 @@
             // 
             splitContainer1.Panel2.Controls.Add(medicalAppointmentsList);
             splitContainer1.Size = new Size(786, 416);
-            splitContainer1.SplitterDistance = 262;
+            splitContainer1.SplitterDistance = 192;
             splitContainer1.TabIndex = 0;
             // 
             // medicalAppointmentsEditor
@@ -86,7 +86,7 @@
             medicalAppointmentsEditor.Dock = DockStyle.Fill;
             medicalAppointmentsEditor.Location = new Point(0, 0);
             medicalAppointmentsEditor.Name = "medicalAppointmentsEditor";
-            medicalAppointmentsEditor.Size = new Size(262, 416);
+            medicalAppointmentsEditor.Size = new Size(192, 416);
             medicalAppointmentsEditor.TabIndex = 0;
             // 
             // medicalAppointmentsList
@@ -94,7 +94,7 @@
             medicalAppointmentsList.Dock = DockStyle.Fill;
             medicalAppointmentsList.Location = new Point(0, 0);
             medicalAppointmentsList.Name = "medicalAppointmentsList";
-            medicalAppointmentsList.Size = new Size(520, 416);
+            medicalAppointmentsList.Size = new Size(590, 416);
             medicalAppointmentsList.TabIndex = 0;
             // 
             // tabPage2

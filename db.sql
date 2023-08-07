@@ -3,13 +3,13 @@ CREATE DATABASE db_medical_clinics;
 use db_medical_clinics;
 
 CREATE TABLE Doctors (
-	id int not null primary key,
+	id int not null primary key AUTO_INCREMENT,
     name varchar(100),
     specialty varchar(100)
 );
 
 CREATE TABLE Medical_appointments (
-	id INT NOT NULL PRIMARY KEY,
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(100),
     lastname VARCHAR(100),
     identification VARCHAR(50),

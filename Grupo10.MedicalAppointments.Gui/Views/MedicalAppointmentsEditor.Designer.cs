@@ -43,6 +43,8 @@
             label7 = new Label();
             appointmentDateTimePicker = new DateTimePicker();
             saveButton = new Button();
+            cancelButton = new Button();
+            appointmentTimePicker = new DateTimePicker();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             availableDoctorsComboBox.FormattingEnabled = true;
             availableDoctorsComboBox.Location = new Point(3, 263);
             availableDoctorsComboBox.Name = "availableDoctorsComboBox";
-            availableDoctorsComboBox.Size = new Size(159, 23);
+            availableDoctorsComboBox.Size = new Size(188, 23);
             availableDoctorsComboBox.TabIndex = 0;
             // 
             // label1
@@ -86,7 +88,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Location = new Point(3, 29);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(159, 213);
+            groupBox1.Size = new Size(188, 213);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Paciente";
@@ -96,7 +98,7 @@
             patientPhoneTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             patientPhoneTextBox.Location = new Point(6, 173);
             patientPhoneTextBox.Name = "patientPhoneTextBox";
-            patientPhoneTextBox.Size = new Size(147, 23);
+            patientPhoneTextBox.Size = new Size(176, 23);
             patientPhoneTextBox.TabIndex = 9;
             // 
             // label5
@@ -113,7 +115,7 @@
             patientIdentificationTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             patientIdentificationTextBox.Location = new Point(6, 128);
             patientIdentificationTextBox.Name = "patientIdentificationTextBox";
-            patientIdentificationTextBox.Size = new Size(147, 23);
+            patientIdentificationTextBox.Size = new Size(176, 23);
             patientIdentificationTextBox.TabIndex = 7;
             // 
             // label4
@@ -130,7 +132,7 @@
             patientLastNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             patientLastNameTextBox.Location = new Point(6, 83);
             patientLastNameTextBox.Name = "patientLastNameTextBox";
-            patientLastNameTextBox.Size = new Size(147, 23);
+            patientLastNameTextBox.Size = new Size(176, 23);
             patientLastNameTextBox.TabIndex = 5;
             // 
             // label3
@@ -147,7 +149,7 @@
             patientNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             patientNameTextBox.Location = new Point(6, 37);
             patientNameTextBox.Name = "patientNameTextBox";
-            patientNameTextBox.Size = new Size(147, 23);
+            patientNameTextBox.Size = new Size(176, 23);
             patientNameTextBox.TabIndex = 3;
             // 
             // label6
@@ -171,26 +173,49 @@
             // 
             // appointmentDateTimePicker
             // 
-            appointmentDateTimePicker.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            appointmentDateTimePicker.Format = DateTimePickerFormat.Short;
             appointmentDateTimePicker.Location = new Point(3, 305);
             appointmentDateTimePicker.Name = "appointmentDateTimePicker";
-            appointmentDateTimePicker.Size = new Size(159, 23);
+            appointmentDateTimePicker.Size = new Size(95, 23);
             appointmentDateTimePicker.TabIndex = 10;
             // 
             // saveButton
             // 
             saveButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            saveButton.Location = new Point(87, 334);
+            saveButton.BackColor = SystemColors.Highlight;
+            saveButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            saveButton.ForeColor = SystemColors.ControlLightLight;
+            saveButton.Location = new Point(113, 334);
             saveButton.Name = "saveButton";
-            saveButton.Size = new Size(75, 23);
+            saveButton.Size = new Size(78, 37);
             saveButton.TabIndex = 11;
             saveButton.Text = "Guardar";
-            saveButton.UseVisualStyleBackColor = true;
+            saveButton.UseVisualStyleBackColor = false;
+            // 
+            // cancelButton
+            // 
+            cancelButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cancelButton.Location = new Point(32, 342);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(75, 23);
+            cancelButton.TabIndex = 12;
+            cancelButton.Text = "Cancelar";
+            cancelButton.UseVisualStyleBackColor = true;
+            // 
+            // appointmentTimePicker
+            // 
+            appointmentTimePicker.Format = DateTimePickerFormat.Time;
+            appointmentTimePicker.Location = new Point(101, 305);
+            appointmentTimePicker.Name = "appointmentTimePicker";
+            appointmentTimePicker.Size = new Size(90, 23);
+            appointmentTimePicker.TabIndex = 13;
             // 
             // MedicalAppointmentsEditor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(appointmentTimePicker);
+            Controls.Add(cancelButton);
             Controls.Add(saveButton);
             Controls.Add(appointmentDateTimePicker);
             Controls.Add(label7);
@@ -199,7 +224,7 @@
             Controls.Add(label1);
             Controls.Add(availableDoctorsComboBox);
             Name = "MedicalAppointmentsEditor";
-            Size = new Size(165, 363);
+            Size = new Size(194, 374);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -223,5 +248,7 @@
         private TextBox patientLastNameTextBox;
         private TextBox patientNameTextBox;
         public Button saveButton;
+        public Button cancelButton;
+        private DateTimePicker appointmentTimePicker;
     }
 }

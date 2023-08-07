@@ -28,6 +28,11 @@ namespace Grupo10.MedicalAppointments.Gui.Controllers
                 _view.RenderData(newData);
             });
 
+            _view.EditMedicalAppointment += (o, appointment) =>
+            {
+                _state.CurrentMedicalAppointMent.Value = appointment;
+            };
+
             // Initial load
             _state.Appointments.Value = _medicalAppointmentsRepository.GetAll();
         }

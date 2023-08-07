@@ -36,7 +36,8 @@
             // 
             appointmentsGridView.AllowUserToAddRows = false;
             appointmentsGridView.AllowUserToDeleteRows = false;
-            appointmentsGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            appointmentsGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            appointmentsGridView.BackgroundColor = SystemColors.ControlLightLight;
             appointmentsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             appointmentsGridView.Dock = DockStyle.Fill;
             appointmentsGridView.Location = new Point(0, 0);
@@ -45,6 +46,7 @@
             appointmentsGridView.RowTemplate.Height = 25;
             appointmentsGridView.Size = new Size(352, 367);
             appointmentsGridView.TabIndex = 0;
+            appointmentsGridView.CellContentClick += appointmentsGridView_CellContentClick;
             appointmentsGridView.CellFormatting += appointmentsGridView_CellFormatting;
             // 
             // MedicalAppointmentsList
