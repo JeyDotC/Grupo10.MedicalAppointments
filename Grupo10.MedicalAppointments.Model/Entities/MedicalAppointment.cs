@@ -12,7 +12,7 @@
 
         public string Phone { get; set; } = string.Empty;
 
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
 
         public Doctor Doctor { get; set; } = new Doctor();
     }

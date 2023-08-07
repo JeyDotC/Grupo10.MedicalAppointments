@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo10.Mvc
 {
-    internal interface IReturnData<T>
+    public interface IReturnData<T>
     {
         T Data { get; }
     }

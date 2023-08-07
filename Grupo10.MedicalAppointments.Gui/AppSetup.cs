@@ -28,7 +28,8 @@ namespace Grupo10.MedicalAppointments.Gui
             new MedicalAppointmentsEditorController(
                 state: appState,
                 view: mainWindow.medicalAppointmentsEditor,
-                doctorsRepository
+                doctorsRepository,
+                medicalAppointmentsRepository
             ).Setup();
         }
     }

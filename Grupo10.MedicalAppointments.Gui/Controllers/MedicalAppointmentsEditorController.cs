@@ -13,12 +13,14 @@ namespace Grupo10.MedicalAppointments.Gui.Controllers
         private readonly AppState _state;
         private readonly MedicalAppointmentsEditor _view;
         private readonly IDoctorsRepository _doctorsRepository;
+        private readonly IMedicalAppointmentsRepository _medicalAppointmentsRepository;
 
-        public MedicalAppointmentsEditorController(AppState state, MedicalAppointmentsEditor view, IDoctorsRepository doctorsRepository)
+        public MedicalAppointmentsEditorController(AppState state, MedicalAppointmentsEditor view, IDoctorsRepository doctorsRepository, IMedicalAppointmentsRepository medicalAppointmentsRepository)
         {
             _state = state;
             _view = view;
             _doctorsRepository = doctorsRepository;
+            _medicalAppointmentsRepository = medicalAppointmentsRepository;
         }
 
         public void Setup()
@@ -29,10 +31,35 @@ namespace Grupo10.MedicalAppointments.Gui.Controllers
                 _view.availableDoctorsComboBox.Items.AddRange(newData.ToArray());
             });
 
+            _state.CurrentMedicalAppointMent.OnChange((newData, oldData) => {
+                _view.RenderData(newData);
+            });
+
+            _view.saveButton.Click += SaveButton_Click;
+
+            // Initial State
             if(!_state.Doctors.Value.Any())
             {
                 _state.Doctors.Value = _doctorsRepository.GetAll();
             }
+
+            _state.CurrentMedicalAppointMent.Value = new Model.Entities.MedicalAppointment();
+        }
+
+        private void SaveButton_Click(object? sender, EventArgs e)
+        {
+            var appointment = _view.Data;
+            if(appointment == null)
+            {
+                return;
+            }
+
+            _medicalAppointmentsRepository.Add(appointment);
+
+            // Clear editor.
+            _state.CurrentMedicalAppointMent.Value = new Model.Entities.MedicalAppointment();
+            // Update appointments the list.
+            _state.Appointments.Value = _medicalAppointmentsRepository.GetAll();
         }
     }
 }

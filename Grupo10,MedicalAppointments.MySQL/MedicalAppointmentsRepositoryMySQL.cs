@@ -1,5 +1,6 @@
 ﻿using Grupo10.MedicalAppointments.Model.Entities;
 using Grupo10.MedicalAppointments.Model.Repositories;
+using System.Xml.Linq;
 
 namespace Grupo10_MedicalAppointments.MySQL
 {
@@ -14,12 +15,32 @@ namespace Grupo10_MedicalAppointments.MySQL
 
         public void Add(MedicalAppointment medicalAppointment)
         {
-            throw new NotImplementedException();
+            using (var connection = _db.Open())
+            {
+                var command = connection.CreateCommand();
+                command.CommandText = @"INSERT INTO medical_appointments (
+    name, 
+    lastname, 
+    identification, 
+    phone, 
+    date, 
+    doctor_id
+) VALUES (@name, @lastName, @identification, @phone, @date, @doctor_id)";
+
+                command.Parameters.AddWithValue("@name", medicalAppointment.Name);
+                command.Parameters.AddWithValue("@lastName", medicalAppointment.LastName);
+                command.Parameters.AddWithValue("@identification", medicalAppointment.Identification);
+                command.Parameters.AddWithValue("@phone", medicalAppointment.Phone);
+                command.Parameters.AddWithValue("@date", medicalAppointment.Date);
+                command.Parameters.AddWithValue("@doctor_id", medicalAppointment.Doctor.Id);
+
+                command.ExecuteNonQuery();
+            }
         }
 
         public IEnumerable<MedicalAppointment> GetAll()
         {
-            using(var connection = _db.Open())
+            using (var connection = _db.Open())
             {
                 var command = connection.CreateCommand();
                 command.CommandText = @"SELECT 
@@ -35,7 +56,7 @@ namespace Grupo10_MedicalAppointments.MySQL
 FROM medical_appointments a join doctors d on a.doctor_id = d.id";
                 var result = command.ExecuteReader();
 
-                while(result.Read())
+                while (result.Read())
                 {
                     yield return new MedicalAppointment
                     {
